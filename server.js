@@ -210,9 +210,14 @@ app.delete('/users/:id', async (req, res) => {
 });
 
 
-app.listen(3000);
+let appServer = app.listen(3000);
 
 
+process.on('SIGINT', () => {
+    appServer.close(() => {
+        console.log('Process terminated')
+    })
+});
 
 // Export the app object
-module.exports = app;
+module.exports = appServer;
