@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'git@github.com:tathagat07/usermanagement.git'
+                git 'https://github.com/tathagat07/usermanagement.git'
             }
         }
 
